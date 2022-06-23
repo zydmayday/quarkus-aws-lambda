@@ -19,3 +19,4 @@ functions:
     memorySize: 256
     environment:
       DISABLE_SIGNAL_HANDLERS: true
+      AUTHOR: zhang

@@ -7,11 +7,11 @@ public class ProcessingService {
 
     public static final String CAN_ONLY_GREET_NICKNAMES = "Can only greet nicknames";
 
-    public OutputObject process(InputObject input) {
+    public OutputObject process(InputObject input, String authorName) {
         if (input.getName().equals("Stuart")) {
             throw new IllegalArgumentException(CAN_ONLY_GREET_NICKNAMES);
         }
-        String result = input.getGreeting() + " " + input.getName();
+        String result = input.getGreeting() + " " + input.getName() + " from " + authorName;
         OutputObject out = new OutputObject();
         out.setResult(result);
         return out;
