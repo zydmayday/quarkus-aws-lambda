@@ -14,5 +14,8 @@ package:
 
 functions:
   hello:
-    handler: io.quarkus.amazon.lambda.runtime.QuarkusStreamHandler::handleRequest
+    handler: not.used.in.provided.runtime
+    runtime: provided
     memorySize: 256
+    environment:
+      DISABLE_SIGNAL_HANDLERS: true
