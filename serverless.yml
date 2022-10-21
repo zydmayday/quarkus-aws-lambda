@@ -2,6 +2,9 @@ service: quarkus-aws-lambda
 
 frameworkVersion: '3'
 
+plugins:
+  - serverless-plugin-scripts
+
 provider:
   name: aws
   stage: dev
@@ -11,6 +14,12 @@ provider:
 
 package:
   artifact: target/function.zip
+
+custom:
+  scripts:
+    hooks:
+      'deploy:finalize': date >> date.log
+
 
 functions:
   hello:
